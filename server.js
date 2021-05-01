@@ -14,7 +14,7 @@ app.use(express.static('public'))
 
 //CONTROLLERS
 
-//GET INDEX  
+//GET INDEX and other routes
 
 //LISTENERS + CONNECTIONS
 app.listen(port, () =>{
