@@ -1,24 +1,9 @@
 //DEPENDENCIES
-const express = require('expres');
+const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const port = 3000;
-
-//CONFIGURATION
-mongoose.connect('mongodb://localhost:27017/projectcrud',
-{useNewURLParser: true});
-
-//Connection Error/Success
-const db = mongoose.connection;
-db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected'));
-db.on('disconnected', () => console.log('mongo disconnected'));
-db.on( 'open' , ()=>{
-  console.log('Connection made!');
-});
-
-const brandData = require('./models/brands.js');
 
 //MIDDLEWARE
 //body parser
@@ -27,9 +12,40 @@ app.use(express.json());
 //static files
 app.use(express.static('public'))
 
-//CONTROLLERS
+//CONFIGURATION
+mongoose.connect('mongodb://localhost:27017/brandcrud', {
+  useNewURLParser: true, 
+  useUnifiedTopology: true, 
+  useFindAndModify: false,
+});
+mongoose.connection.once('open', () => {
+  console.log('connected to mongo');
+});
 
-//GET INDEX and other routes
+//CONTROLLERS
+//new brand user input
+const usersController = require('./controllers/users.js');
+const brandData = require('./models/brands.js');
+const seedBrand = require('./models/seed.js');
+app.use('/users', usersController);
+
+//ROUTES
+//Index Route
+app.get('/', (req, res) =>{
+    res.render('index.ejs')
+})
+
+//Seed Route
+app.get('/seedBrand', (req, res) => {
+  // seeds the data
+  brandData.create(seedBrand, (err, createdData) => {
+    // logs created users
+    console.log(createdData);
+    // redirects to index
+    res.redirect('/');
+    data: createdData;
+  });
+});
 
 //LISTENERS + CONNECTIONS
 app.listen(port, () =>{
