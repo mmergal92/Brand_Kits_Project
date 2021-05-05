@@ -9,8 +9,18 @@
 </head>
 <body>
     <h1>Branding show page</h1>
+    <h2>In this Brand Kit, we are storing information about <%=brandShow.name %></h2>
     <p>
-        <%=brandShow.name %>
+        Logo Image: </br>
+        <img src=<%=brandShow.logoImage %> alt="logo image" class="logos"></br>
+        Moodbaord Image: </br>
+        <img src=<%=brandShow.moodboardImage %> alt="moodboard image" class ="moodboards"> </br>
+        The brand color of <%=brandShow.name %> is:
+        <ul>
+         <li style="background-color:#<%=brandShow.colors %>"><%=brandShow.colors %>.</li> 
+        </ul>
+        The brand values of <%=brandShow.name %> are: <%=brandShow.brandValues %>. </br>
+        Notes Entry: <%=brandShow.notesEntry %>
             </p>
     <a href = "/">Back to Index</a>
     </p>

@@ -1,37 +1,76 @@
 body {
-    background: #eee;
     font-family: 'Montserrat', helvetica;
+    background-color: #f0f1ff;
     font-size: 0.9em;
     margin: 0;
 }
+/* ===== HEADER * ===== */
 .header {
-    display: flex;
-    justify-content: space-between;
-    background: white;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  background-color: #f0f1ff;
 }
-.header-left {
-    display: flex inline-flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-.header-left img {
-    width: 100px;
-    height: 100px;
-  }
-.header-title h1 {
-    font-size: 2em;
-    font-weight: 700;
-    color: #444;
-    margin-left: 10px;
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  background-color: #f0f1ff;
+}
+/* #circle {
+  background: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+} */
+.header-nav ul {
+  list-style-type: none;
 }
 .header-nav li {
-    display: inline-block;
-    text-transform: uppercase;
-    padding: 0 10px;
-  }
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 0 10px;
+}
+.header-nav a {
+  color: #5642b6;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s ease-in;
+  font-size: 0.8em;
+}
+.header-nav a:hover {
+  color: black;
+  transition: 0.3s ease-in;
+}
+/* ===== MAIN * ===== */
 .main {
-    width: 80%;
-    margin: 50px auto;
-    text-align: center;
+  width: 80%;
+  background-image: url("/img/patrik-michalicka-r3iAqHb7JWs-unsplash.jpg");
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  margin: 50px auto;
+  text-align: center;
+}
+.main h1, p, a{
+  vertical-align: bottom;
+}
+/* .main > img {
+  border-radius: 20px;
+  opacity: 0.9;
+  width: 100%;
+} */
+/* .main{
+  border-style: solid;
+  border-color:black;
+}
+.img{
+  width: 50%;
+} */
+.logos{
+  width: 50%
+}
+.moodboards{
+  width: 50%
 }

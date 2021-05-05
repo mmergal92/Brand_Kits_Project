@@ -4,25 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href= "/public/css/style.css" rel="stylesheet" type="text/css" />
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+    <!--CSS-->
+    <link href= "css/style.css" rel="stylesheet" type="text/css" />
     <title>Index page for Brand Kits</title>
 </head>
 <body>
 <!-- ====== TOP HEADER BAR ====== -->
-    <div class= "header">
-        <div class= "header-left">
-            <h1>BRANDING KITS</h1>
-        </div>
-        <div class="header-center">
-        <nav>
-            <li>
-            <a href="/users/new">Create a new Brand Kit</a>
-            </li>
-        </nav>
-        </div>
+<div class= "header">
+    <div class= "header-title">
+    <h1>BRANDING KITS Logo here</h1>
+    </div>
+<!-- navigation -->
+
+    <div class="header-nav">
+    <nav>
+    <li>
+        <a href="/users/new">Create a new Brand Kit</a>
+    </li>
+    <li>
+        <a href="/users/60931b0f6f63b6e328a2c3fb">Sample Brand Kit</a>
+    </li>
+    <li>
+        <a href="/sessions/new">Log In</a>
+    </li>
+    </nav>
+    </div>
+</div>
 <!-- ===== MAIN SPLASH PAGE CONTENT ===== -->
 <div class= "main">
-</div>
+          <!-- image -->
+    <!-- <img src="img/patrik-michalicka-r3iAqHb7JWs-unsplash.jpg" alt="branding image" class="img"> -->
+      <!-- about -->
+        <h1>The most iconic brands were once just a thought.</h1>
+        <p>Complete the form below to start your own brand kit now.</p>
+        <form method="get" action="/users/new">
+            <button type="submit">Create Your Brand Kit</button>
+        </form>
+        <!-- <button href="/users/new">Create Your Brand Kit</a> -->
+      <!-- see all -->
+    </div>
+<div class="main-abt">
 <ul>
     <% for(let i=0; i<allData.length; i++){ %>
         <li>
@@ -34,6 +57,6 @@
     </li>
 <% } %>
 </ul>
-
+</div>
 </body>
 </html>
