@@ -11,7 +11,7 @@ body {
     padding: 10px;
 }
 .header-left {
-    display: flex;
+    display: flex inline-flex;
     justify-content: space-between;
     align-items: center;
   }
