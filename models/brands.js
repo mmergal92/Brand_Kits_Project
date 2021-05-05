@@ -6,6 +6,13 @@ const brandSchema = new Schema({
     name: String,
     username: String, 
     password: String, 
+    socials: [String],
+    typography: [String],
+    colors: [String],
+    brandValues: [String],
+    logoImage: String,
+    moodboardImage: String,
+    notesEntry: [String],
 });
 
 //Collection name
