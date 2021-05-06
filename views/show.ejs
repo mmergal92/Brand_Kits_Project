@@ -9,16 +9,25 @@
 </head>
 <body>
     <h1>Branding show page</h1>
-    <h2>In this Brand Kit, we are storing information about <%=brandShow.name %></h2>
+    <h2>In this Brand Kit, we are storing information about <em><%=brandShow.name %></em> </h2>
     <p>
         Logo Image: </br>
         <img src=<%=brandShow.logoImage %> alt="logo image" class="logos"></br>
         Moodbaord Image: </br>
         <img src=<%=brandShow.moodboardImage %> alt="moodboard image" class ="moodboards"> </br>
         The brand color of <%=brandShow.name %> is:
-        <ul>
-         <li style="background-color:#<%=brandShow.colors %>"><%=brandShow.colors %>.</li> 
-        </ul>
+        <table style ="width: 100%">
+         <tr>
+             <th>First Brand Color</th>
+             <th>Second Brand Color</th>
+             <th>Third Brand Color</th>
+         </tr> 
+         <tr>
+             <td style="background-color:#<%=brandShow.colors %>"></td>
+             <td>Not sure yet</td>
+             <td>Not sure yet</td>
+         </tr>
+        </table>
         The brand values of <%=brandShow.name %> are: <%=brandShow.brandValues %>. </br>
         Notes Entry: <%=brandShow.notesEntry %>
             </p>
