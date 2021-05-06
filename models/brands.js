@@ -3,12 +3,16 @@ const Schema = mongoose.Schema
 
 //Schema Set Up
 const brandSchema = new Schema({
-    name: String,
-    username: String, 
-    password: String, 
-    socials: [String],
-    typography: [String],
-    colors: [String],
+    name: {type: String, required: true, default: "Test Company"},
+    username: {type: String, required: true, unique: true},
+    password: {type: String, required: true, unique: true},
+    brandCategory: {type: String, required: true, default: "Personal"},
+    socials: {type: [String], default: ["https://www.instagram.com/"]},
+    typographyOne: {type: [String], default: ["Times New Roman"]},
+    typographyTwo: {type: [String], default: ["Times New Roman"]},
+    colorsOne: {type: String, default: "f5e7e0"},
+    colorsTwo: String,
+    colorsThree: String,
     brandValues: [String],
     logoImage: String,
     moodboardImage: String,

@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static('public'))
 
 //CONFIGURATION
-mongoose.connect('mongodb://localhost:27017/brandcrud', {
+mongoose.connect('mongodb://localhost:27017/brandingcrud', {
   useNewURLParser: true, 
   useUnifiedTopology: true, 
   useFindAndModify: false,
@@ -47,17 +47,17 @@ app.get('/', (req, res) =>{
 })
 })
 
-//Seed Route
-// app.get('/seedBrand', (req, res) => {
-//   // seeds the data
-//   brandData.create(seedBrand, (err, createdData) => {
-//     // logs created users
-//     console.log(createdData);
-//     // redirects to index
-//     res.redirect('/');
-//     // data: createdData;
-//   });
-// });
+// Seed Route
+app.get('/seedBrand', (req, res) => {
+  // seeds the data
+  brandData.create(seedBrand, (err, createdData) => {
+    // logs created users
+    console.log(createdData);
+    // redirects to index
+    res.redirect('/');
+    // data: createdData;
+  });
+});
 
 //LISTENERS + CONNECTIONS
 app.listen(port, () =>{
