@@ -37,10 +37,10 @@
         The brand colors of <strong><%=brandShow.name %> </strong>are:
         <table style ="width: 100%">
          <tr class = "color-table">
-             <td style="background-color: #<%=brandShow.colorsOne %>">  </td>
-             <td style="background-color: #<%=brandShow.colorsTwo %>">  </td>
-             <td style="background-color: #<%=brandShow.colorsThree %>">  </td>
-         </tr>
+             <!-- <td style="background-color: #<%=brandShow.colorsOne %>"></td>
+             <td style="background-color: #<%=brandShow.colorsTwo %>"></td>
+             <td style="background-color: #<%=brandShow.colorsThree %>"></td> -->
+         </tr> 
          <tr>
             <td>Primary Brand Color: <%=brandShow.colorsOne %></td>
             <td>Secondary Brand Color: <%=brandShow.colorsTwo %></td>
@@ -48,7 +48,7 @@
         </tr>
         </table>
         <div class = "columns">
-            <div class = "first-column" style="background-color: #<%=brandShow.colorsOne %>">
+            <div class = "first-column">
                 The brand values of <%=brandShow.name %> are: <%=brandShow.brandValues %>. </br>
                 Notes Entry: <%=brandShow.notesEntry %>
                 Socials: <%=brandShow.socials %>

@@ -53,6 +53,7 @@ router.put('/:id', (req, res) => {
 	brandData.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateLog) =>{
         if (err){
           res.send(err)
+          console.log("did not work")
         }else{
           res.redirect('/'); 
         }
