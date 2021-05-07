@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 //Schema Set Up
 const brandSchema = new Schema({
-    name: {type: String, required: true, default: "Test Company"},
+    name: {type: String, required: true},
     username: {type: String, required: true, unique: true},
     password: {type: String, required: true, unique: true},
     brandCategory: {type: String, required: true, default: "Personal"},
