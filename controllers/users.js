@@ -55,7 +55,7 @@ router.put('/:id', (req, res) => {
           res.send(err)
           console.log("did not work")
         }else{
-          res.redirect('/'); 
+          res.redirect('/users/' + req.params.id); 
         }
       })
 })
