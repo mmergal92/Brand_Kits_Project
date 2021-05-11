@@ -19,12 +19,16 @@ router.get('/new', (req, res) => {
 })
 
 //POST - new brand
-router.post('/', async (req, res)=>{
-    brandData.create(req.body, (error, createdLog) => {
-        console.log(req.body)
-        console.log("testing users post route " + createdLog)
-        res.redirect('/')
+router.post('/', (req, res)=>{
+  console.log(req.body)
+  if (req.body.name.length == 0 || req.body.username.length == 0 || req.body.password.length == 0){
+    res.render('users/newInc.ejs')
+  }else{
+    brandData.create(req.body, (error, createdLog) =>{
+      res.redirect('/');
+      console.log("testing users post route " + createdLog);
     })
+  }
 })
 
 //Show route
@@ -61,16 +65,16 @@ router.put('/:id', (req, res) => {
 })
 
 // DELETE
-// router.delete('/:id', (req,res) =>{
-//     brandData.findByIdAndRemove({_id:req.params.id}, (err, deletedLog)=>{
-//       if (err){
-//         res.send(err)
-//       }else{
-//       // console.log(logsData);
-//       res.redirect('/');
-//     }
-//     });
-//   })
+router.delete('/:id', (req,res) =>{
+    brandData.findByIdAndRemove({_id:req.params.id}, (err, deletedLog)=>{
+      if (err){
+        res.send(err)
+      }else{
+      // console.log(logsData);
+      res.redirect('/');
+    }
+    });
+  })
 
 //export
 module.exports = router;
